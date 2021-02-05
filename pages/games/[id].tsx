@@ -1,6 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable react/no-array-index-key */
 import Head from "next/head";
 import { firebase } from "src/initFirebase";
 import { GetServerSideProps } from "next";
@@ -85,6 +82,7 @@ export default function Game({ id }: Props): JSX.Element {
     copy.first = copy.first === "player1" ? "player2" : "player1";
     copy.turn = copy.first;
     db.ref(`games/${id}`).set(copy);
+
   };
 
   if (!game) return <div>Loading Game...</div>;
